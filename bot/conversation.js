@@ -57,7 +57,7 @@ function finalizeOrder(session, scheduledFor) {
 
   if (!session.email) {
     session.state = 'EMAIL_INPUT';
-    bot(session, 'Please enter your email address so we can send your payment receipt:');
+    bot(session, 'Please enter your email address so we can send your payment receipt:', null, 'email');
   } else {
     session.state = 'PAY_CHOICE';
     bot(session, 'Would you like to pay now?\n1 - Pay with Paystack\n0 - Pay later');
@@ -208,7 +208,7 @@ async function handleMessage(session, rawText) {
   if (session.state === 'SCHEDULE_CHOICE') {
     if (input === '1') {
       session.state = 'SCHEDULE_INPUT';
-      bot(session, 'Please enter the date & time as YYYY-MM-DD HH:MM (24-hour), e.g. 2026-07-10 18:30.\nOr type 0 to place the order now instead.');
+      bot(session, 'Please enter the date & time as YYYY-MM-DD HH:MM (24-hour), e.g. 2026-07-10 18:30.\nOr type 0 to place the order now instead.', null, 'text');
       return;
     }
     if (input === '0') {
@@ -226,7 +226,7 @@ async function handleMessage(session, rawText) {
     }
     const date = parseFutureDate(input);
     if (!date) {
-      bot(session, 'That date/time is invalid or in the past. Please use YYYY-MM-DD HH:MM (24-hour), e.g. 2026-07-10 18:30, or type 0 to place the order now.');
+      bot(session, 'That date/time is invalid or in the past. Please use YYYY-MM-DD HH:MM (24-hour), e.g. 2026-07-10 18:30, or type 0 to place the order now.', null, 'text');
       return;
     }
     finalizeOrder(session, date);
@@ -236,7 +236,7 @@ async function handleMessage(session, rawText) {
   // ---- EMAIL FOR PAYMENT RECEIPT ----------------------------------------
   if (session.state === 'EMAIL_INPUT') {
     if (!isValidEmail(input)) {
-      bot(session, "That doesn't look like a valid email address. Please try again.");
+      bot(session, "That doesn't look like a valid email address. Please try again.", null, 'email');
       return;
     }
     session.email = input;

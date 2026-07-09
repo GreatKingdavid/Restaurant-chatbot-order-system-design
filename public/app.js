@@ -39,6 +39,27 @@ function renderMessage(msg) {
 function renderMessages(messages) {
   messages.forEach(renderMessage);
   chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // Switch the on-screen keyboard to match whatever the bot just asked
+  // for (plain numbers, an email address, or a free-form date/time).
+  const lastWithHint = [...messages].reverse().find((m) => m.hint);
+  if (lastWithHint) applyInputHint(lastWithHint.hint);
+}
+
+function applyInputHint(hint) {
+  if (hint === 'email') {
+    chatInput.type = 'email';
+    chatInput.setAttribute('inputmode', 'email');
+    chatInput.placeholder = 'you@example.com';
+  } else if (hint === 'text') {
+    chatInput.type = 'text';
+    chatInput.setAttribute('inputmode', 'text');
+    chatInput.placeholder = 'YYYY-MM-DD HH:MM';
+  } else {
+    chatInput.type = 'text';
+    chatInput.setAttribute('inputmode', 'numeric');
+    chatInput.placeholder = 'Type an option number...';
+  }
 }
 
 function showToast(text, kind) {

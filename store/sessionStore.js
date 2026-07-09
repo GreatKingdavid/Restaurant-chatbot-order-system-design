@@ -39,8 +39,8 @@ function getSession(deviceId) {
   return sessions[deviceId];
 }
 
-function bot(session, text, link) {
-  const msg = { sender: 'bot', text };
+function bot(session, text, link, hint = 'numeric') {
+  const msg = { sender: 'bot', text, hint };
   if (link) msg.link = link;
   session.messages.push(msg);
 }

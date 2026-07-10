@@ -9,16 +9,16 @@ const MENU = [
   {
     id: 1,
     name: 'Jollof Rice',
-    basePrice: 8,
+    basePrice: 6000,
     optionGroups: [
-      { name: 'Size', choices: [{ label: 'Regular', delta: 0 }, { label: 'Large', delta: 3 }] },
+      { name: 'Size', choices: [{ label: 'Regular', delta: 0 }, { label: 'Large', delta: 300 }] },
       {
         name: 'Protein',
         choices: [
           { label: 'None', delta: 0 },
-          { label: 'Chicken', delta: 3 },
-          { label: 'Beef', delta: 4 },
-          { label: 'Fish', delta: 5 },
+          { label: 'Chicken', delta: 300 },
+          { label: 'Beef', delta: 400 },
+          { label: 'Fish', delta: 500 },
         ],
       },
     ],
@@ -26,16 +26,16 @@ const MENU = [
   {
     id: 2,
     name: 'Fried Rice',
-    basePrice: 8,
+    basePrice: 5000,
     optionGroups: [
-      { name: 'Size', choices: [{ label: 'Regular', delta: 0 }, { label: 'Large', delta: 3 }] },
+      { name: 'Size', choices: [{ label: 'Regular', delta: 0 }, { label: 'Large', delta: 300 }] },
       {
         name: 'Protein',
         choices: [
           { label: 'None', delta: 0 },
-          { label: 'Chicken', delta: 3 },
-          { label: 'Beef', delta: 4 },
-          { label: 'Fish', delta: 5 },
+          { label: 'Chicken', delta: 300 },
+          { label: 'Beef', delta: 400 },
+          { label: 'Fish', delta: 500 },
         ],
       },
     ],
@@ -43,14 +43,14 @@ const MENU = [
   {
     id: 3,
     name: 'Pounded Yam & Egusi Soup',
-    basePrice: 10,
+    basePrice: 10000,
     optionGroups: [
       {
         name: 'Protein',
         choices: [
-          { label: 'Goat Meat', delta: 4 },
-          { label: 'Beef', delta: 3 },
-          { label: 'Fish', delta: 5 },
+          { label: 'Goat Meat', delta: 400 },
+          { label: 'Beef', delta: 300 },
+          { label: 'Fish', delta: 500 },
         ],
       },
     ],
@@ -58,14 +58,14 @@ const MENU = [
   {
     id: 4,
     name: 'Suya (Spicy Grilled Beef Skewers)',
-    basePrice: 6,
+    basePrice: 3200,
     optionGroups: [
       {
         name: 'Spice Level',
         choices: [
           { label: 'Mild', delta: 0 },
           { label: 'Hot', delta: 0 },
-          { label: 'Extra Hot', delta: 1 },
+          { label: 'Extra Hot', delta: 100},
         ],
       },
     ],
@@ -73,33 +73,33 @@ const MENU = [
   {
     id: 5,
     name: 'Chicken Wings',
-    basePrice: 7,
+    basePrice: 4000,
     optionGroups: [
-      { name: 'Spice Level', choices: [{ label: 'Mild', delta: 0 }, { label: 'Hot', delta: 1 }] },
+      { name: 'Spice Level', choices: [{ label: 'Mild', delta: 0 }, { label: 'Hot', delta: 100 }] },
     ],
   },
   {
     id: 6,
     name: 'Grilled Fish',
-    basePrice: 12,
+    basePrice: 12000,
     optionGroups: [
-      { name: 'Size', choices: [{ label: 'Regular', delta: 0 }, { label: 'Large', delta: 4 }] },
+      { name: 'Size', choices: [{ label: 'Regular', delta: 0 }, { label: 'Large', delta: 400 }] },
     ],
   },
-  { id: 7, name: 'Meat Pie', basePrice: 3, optionGroups: [] },
+  { id: 7, name: 'Meat Pie', basePrice: 3000, optionGroups: [] },
   {
     id: 8,
     name: 'Chapman (Drink)',
-    basePrice: 4,
+    basePrice: 4000,
     optionGroups: [
-      { name: 'Size', choices: [{ label: 'Small', delta: 0 }, { label: 'Large', delta: 2 }] },
+      { name: 'Size', choices: [{ label: 'Small', delta: 0 }, { label: 'Large', delta: 200 }] },
     ],
   },
-  { id: 9, name: 'Zobo (Drink)', basePrice: 3, optionGroups: [] },
+  { id: 9, name: 'Zobo (Drink)', basePrice: 3000, optionGroups: [] },
   {
     id: 10,
     name: 'Ice Cream',
-    basePrice: 5,
+    basePrice: 5000,
     optionGroups: [
       {
         name: 'Flavor',
